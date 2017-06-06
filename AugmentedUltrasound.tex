@@ -1,0 +1,88 @@
+\documentclass{llncs}
+%
+\usepackage{makeidx}
+%
+\begin{document}
+%
+\frontmatter
+%
+\pagestyle{headings}
+\addtocmark{Augmented Ultrasound}
+\title{Ultrasound Augmentation: Rapid 3-D Scanning for Tracking and On Body Display}
+\titlerunning{Ultrasound Augmentation}
+\author{Maeliss Jallais \and Hastings Greer \and Stephen Aylward}
+%
+\mainmatter
+\maketitle
+$$2 + 3 = 8$$
+
+
+We have developed algorithms that analyze ultrasound signals to detect internal bleeding.  These algorithms are part of a point-of-care, computer-assisted ultrasound system that is intended to aid in the triage of patients with abdominal trauma at the scene of an accident - helping emergency medical service (EMS) personnel save lives by helping them to decide when to order expedited transport and initiate life saving measures in the field.
+
+The remaining challenge with deploying our point-of-care, computer-assisted ultrasound system is that even though internal bleeding can be automatically detected, the EMS personnel must still know where to place and how to manipulate an ultrasound probe at various anatomic locations in order to thoroughly examine the regions of the abdomen where blood tends to pool.  Additionally, the EMS personnel must also ensure that high quality ultrasound data is being acquired. These positioning and data quality assessment tasks require extensive anatomic and ultrasound training - beyond what most clinicians and/or EMS personnel typically receive.
+
+To solve this problem, we are investigating a variety of methods and user-interfaces to guide EMS personnel in probe placement, to inform them of data quality, and to produce diagnoses.   One innovative method we are exploring involves a system that combines patient and probe tracking with augmented reality in order to create  an “augmented ultrasound” system.
+Augmented Ultrasound
+Rather than displaying data and instructions on a screen, the premise of our augmented ultrasound system is that guidance and diagnoses can be conveyed concisely by projecting instructions onto the surface of the patient. There are several advantages. Unlike a screen, projection doesn’t require the operator to look away from the patient. In addition, when combined with a tracker, it can provide directions in absolute terms. For example, our system will be able to direct the operator to “place the scanner on the bullseye”, instead of relying on more abstract instructions such as “Place the scanner on the right side of the patient’s chest, half-way between the nipple and the shoulder.” Furthermore, instructions can be updated based on the tracked movement of the ultrasound probe and the images/anatomy captured in the ultrasound data, e.g., ensuring coverage of an anatomic area or flashing a warning icon when the probe is not making sufficient contact with the skin. 
+
+To operate, the augmented ultrasound system must be able to track an ultrasound probe and the surface of the patient’s body, and then use the generated model of the body and position of the probe to accurately project graphics/instructions onto the patient’s body.  Furthermore,the augmented ultrasound system must work in sunlight and in rugged environments with minimal setup time so that it can be applied at the scene of an accident.  In the next section we discuss how we form a 3D model of a scene using a laser projector and a high speed camera.  Then we describe how we track objects in that scene.
+3D Scene Modeling
+To form a 3D model of a scene, we replicated and extended the work in a paper by researchers at Carnegie Mellon University that involved a structured light 3D scanner based on a portable projector (using on laser projection technology) and a high speed camera (See Fig. 1, adapted from [1]). The laser projector draws only one line of a projected image at a time, but it does this fast enough so that the human eye sees the entire image. The high speed camera is capable of precise timing and a fast shutter speed. These properties allow the camera to take a picture as the projector draws a specific line of the image. By a one-time calibration of the camera and projector, and using structured-light reconstruction algorithms, each point on a projected line can be efficiently and accurately triangulated to a point in 3-D space (i.e., each illuminated point seen in a camera image is at the intersection of the plane/line of light emitted by the projector and the corresponding pixel/line viewed by the camera).
+
+
+Figure 1. The augmented reality system uses a pico projector (based on laser projection technology) to display an image in a scene.  A high-speed camera sees the individual lines being drawn by the projector to create theits image.   Via appropriate camera calibration, custom circuitry to detect the vertical reset of the laser, and depth from structured lighting algorithms, a 3D model of the scene can be formed at very high resolution in about one second.
+
+Our system is composed of a Grasshopper3 camera and a SONY mobile projector MP CL1. With a resolution of 2048 x 1536, we can use the camera at a frame rate of 300 fps. The update rate per image of the laser projector is 60Hz in scan line order. Given its resolution of 1920 x 720, it projects 43,200 lines/s.
+ 
+The camera/projector calibration process is adapted from the method developed at Brown University [2], which is based on OpenCV and uses the camera API.
+ 
+The augmented ultrasound system works under varied lighting conditions for three reasons.  First, the shutter speed simplifies detecting which pixels are illuminated by the projector: it suppresses ambient light, even direct sunlight, simply by not being open for more than a tiny fraction of a second. This benefit arises because the laser projector illuminates each point very brightly, but only for a fraction of a millisecond, whereas ambient sources like the sun illuminate continuously at a lower intensity. Second, we use background subtraction to further reduce the effect of ambient light.  In particular, from each image taken we subtract an image from when the laser is in a different location.  Third, we apply a custom method for quickly detecting the brightest point on a vertical scan line in a gray scale image.
+ 
+The most difficult challenge with our low-cost, compact ultrasound augmentation system was that the horizontal sync signal produced by the projector / HDMI protocol was not phase-locked to the actual vertical movement of the laser.  For this reason, we opted to trigger the camera off the light emitted by the projector, using a photocell and a pair of Operational Amplifiers.  See Fig. 2.
+
+
+Figure 2. Circuit diagram of the photo detector system used to determine when the laser returns to the upper left and begins drawing a new image - approximately every 1/60th of a second.
+
+Sample results from the system are shown in Fig. 3.  The system is now being optimized for speed, by expanding upon the trigger mode on the camera to capture up to three lines from each frame (i.e., every time the laser sweeps the scene).
+
+
+
+
+Figure 3. Examples of 3D scenes that can be captured by our system
+Object Tracking
+Having formed a 3D model of a scene, the next step in ultrasound augmentation consists of tracking an ultrasound probe. To that end, we mounted a multi-cubed, color-tagged marker (designed by InnerOptic) on the probe.  The colors of the cube are red, blue and green, and they are optimized for the response curves of the color detectors in the camera. By determining the intersection of three adjacent faces on the cubes, we can determine the position and orientation of the ultrasound probe.
+ 
+To simplify and speed the tracking algorithm, instead of estimating the specific location of each cube face, we estimate the planes which contain each of the faces of the cube, and then solve for the intersection of those planes. The plane detection method begins with color pixel detection, using statistical models of the appearance of the cube faces under a range of lighting conditions.  Depending on the image projected by the projector, the ambient light, and adjacent objects in the environment, extraneous pixels might be incorrectly identified as cube pixels, based on color alone. To eliminate extraneous pixels, we compute the gravity centers for each target color using robust statistics. Knowing the expected relative position of each face to the others, we can then redefine the estimates of the gravity centers by eliminating colored pixels that are inconsistent with the expected relative positions of each face and that are too far from the estimated gravity centers.  To further reduce the influence of extraneous pixels, we also estimate the equations of the planes using the RANSAC algorithm (random sample consensus), which randomly picks 3 points, computes the plane defined by them and then scores that plane based on how many other cube points are included in that plane.  Ultimately, the planes with the best scores are chosen.  The intersection point of the three chosen planes is then used to define the position and orientation of the probe in space.   A sample result of three detected planes intersecting the scene are shown in Fig. 4.
+ 
+
+Figure 4 (left) : The raw point cloud, before cube detection
+Figure 4 (right) : The collected point cloud is shown in white.  The intersection of the estimated red, green, and blue planes with that point cloud are correspondingly shown.  This indicates that the faces of the cube are well represented by the estimated planes.
+Conclusion
+Ongoing work is focusing on quantifying the performance of this algorithms.  Current studies indicate 2mm consistency within a 30cm x 60cm x 60cm operating environment.  The system has been shown to be insensitive to a wide range of ambient light brightness and to the image being projected into the scene.
+
+The probe tracker data will be used, in combination with a custom image reconstruction technique, to compound a sequence of imprecisely and sparsely tracked ultrasound images into a complete 3D scan.
+
+The 3D scene models will be used to rectify the images being projected into the scene.
+
+The final system is illustrated in Fig. 5.  That figure depicts the system indicating where a needle should be inserted for peripheral vascular access with ultrasound guidance.
+
+
+Figure 5. An illustration of the end-goal of the system.  A target (black X) is projected onto the skin as the camera computes depth from structured light using the raster lines of the projected image as that image is drawn.  Ultrasound can be used to detect peripheral vessels, select needle insertion locations, and verify needle placement patency.
+
+
+Acknowledgements
+
+This work was funded, in part, by the following grants:
+NIH/NIBIB: "In-field FAST procedure support and automation" (R43EB016621)
+NIH/NINDS: "Multimodality image-based assessment system for traumatic brain injury" (R44NS081792)
+NIH/NIGMS/NIBIB: “Slicer+PLUS: Collaborative, open-source software for ultrasound analysis” (R01EB021396)
+
+References
+
+[1] C.Mertz, S. J. Koppal, S. Sia, S.G. Narasimhan. A low powered structured light sensor for 
+     outdoor scene reconstruction and dominant material identification. In CVPRW IEEE, 2012.
+[2] D. Moreno, G. Taubin. Simple, Accurate, and Robust Projector-Camera Calibration
+
+
+\end{document}
+
