@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.6.9)  9 JUN 2017 15:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.6.9)  9 JUN 2017 15:50
 entering extended mode
 **./AugmentedUltrasound.tex
 (AugmentedUltrasound.tex
@@ -403,7 +403,21 @@ File: linesPointCloud.png Graphic file (type png)
 <use linesPointCloud.png>
 Package pdftex.def Info: linesPointCloud.png used on input line 88.
 (pdftex.def)             Requested size: 166.63585pt x 132.78246pt.
- [5]
+ <Hastings_arm.jpg, id=25, 3035.34pt x 4047.12pt>
+File: Hastings_arm.jpg Graphic file (type jpg)
+
+<use Hastings_arm.jpg>
+Package pdftex.def Info: Hastings_arm.jpg used on input line 110.
+(pdftex.def)             Requested size: 117.36346pt x 156.49014pt.
+
+<Hastings_arm_pointcloud.png, id=26, 633.11531pt x 457.71pt>
+File: Hastings_arm_pointcloud.png Graphic file (type png)
+
+<use Hastings_arm_pointcloud.png>
+Package pdftex.def Info: Hastings_arm_pointcloud.png used on input line 111.
+(pdftex.def)             Requested size: 216.45425pt x 156.49014pt.
+ [5] [6 <./linesNotFound.png> <./linesPointCloud.png> <./Hastings_arm.jpg> <./H
+astings_arm_pointcloud.png>]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ú in font cmr10!
@@ -411,7 +425,7 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
 
-Overfull \hbox (9.18166pt too wide) in paragraph at lines 113--114
+Overfull \hbox (9.18166pt too wide) in paragraph at lines 124--125
 []\OT1/cmr/m/n/10 NIH/NIBIB: In-field FAST pro-ce-dure sup-port and au-toma-tio
 n (R43EB016621) 
  []
@@ -428,27 +442,23 @@ Missing character: There is no ú in font cmr10!
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
-[6 <./linesNotFound.png> <./linesPointCloud.png>] (AugmentedUltrasound.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[7] (AugmentedUltrasound.aux) ) 
 Here is how much of TeX's memory you used:
- 3548 strings out of 493323
- 53733 string characters out of 3139061
- 225352 words of memory out of 3000000
- 7043 multiletter control sequences out of 15000+200000
+ 3560 strings out of 493323
+ 54037 string characters out of 3139061
+ 225358 words of memory out of 3000000
+ 7051 multiletter control sequences out of 15000+200000
  7289 words of font info for 26 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,12n,49p,1574b,355s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on AugmentedUltrasound.pdf (6 pages, 1514896 bytes).
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx
+9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb>
+Output written on AugmentedUltrasound.pdf (7 pages, 3949323 bytes).
 PDF statistics:
- 48 PDF objects out of 1000 (max. 8388607)
+ 57 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
