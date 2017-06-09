@@ -2,6 +2,8 @@
 %
 \usepackage{makeidx}
 \usepackage{graphicx}
+\usepackage{mwe}
+\usepackage{subfig}
 %
 \begin{document}
 %
@@ -12,7 +14,7 @@
 \title{Ultrasound Augmentation: Rapid 3-D Scanning for Tracking and On Body Display}
 \titlerunning{Ultrasound Augmentation}
 \author{Maeliss Jallais \and Hastings Greer \and Stephen Aylward}
-\institute{Kitware}
+\institute{Kitware Inc, Carrboro NC 27510, USA}
 %
 \mainmatter
 \maketitle
@@ -45,11 +47,13 @@ To form a 3D model of a scene, we replicated and extended the work in a paper by
 The augmented reality system uses a pico projector (based on laser projection technology) to display an image in a scene. A high-speed camera sees the individual lines being drawn by the projector to create the image. Via appropriate camera calibration, custom circuitry to detect the vertical reset of the laser and depth from structured lighting algorithms, a 3D model of the scene can be formed at very high resolution in about one second.
 }
 \end{figure}
+
 Our system is composed of a Grasshopper3 camera and a SONY mobile projector MP CL1. With a resolution of 2048 x 1536, we can use the camera at a frame rate of 300 fps. The update rate per image of the laser projector is 60Hz in scan line order. Given its resolution of 1920 x 720, it projects 43,200 lines/s.
 
 The augmented ultrasound system works under varied lighting conditions for three reasons. First, the shutter speed simplifies the detection of which pixels are illuminated by the projector. It suppresses ambient light, even direct sunlight, simply by remaining open for no more than a tiny fraction of a second.
 
 \begin{figure}
+\centering
 \includegraphics[width=10cm,height=10cm,keepaspectratio]{circuit}
 \caption{
 Circuit diagram of the photo detector system used to determine when the laser returns to the upper left and begins drawing a new image (approximately every 1/60th of a second).
@@ -61,29 +65,35 @@ The most difficult challenge with our low-cost, compact ultrasound augmentation 
 
 Sample results from the system are shown in Fig. 3.  We are now optimizing the system for speed by expanding upon the trigger mode on the camera to capture up to three lines from each frame (i.e., every time the laser sweeps the scene).
 
-\begin{figure}
-\includegraphics[width=10cm,height=10cm,keepaspectratio]{dino}
-\includegraphics[width=10cm,height=10cm,keepaspectratio]{block}
-\includegraphics[width=10cm,height=10cm,keepaspectratio]{rockem}
+\begin{figure}[h]
+\centering
+\subfloat[]{\includegraphics[scale=.14,keepaspectratio]{dino}}\hfill%
+\subfloat[]{\includegraphics[scale=.14,keepaspectratio]{block}}\\
+\subfloat[]{\includegraphics[scale=.14,keepaspectratio]{rockem}}
 \caption{
-Figure 3. Examples of 3D scenes that can be captured by our system.
+Examples of 3D scenes captured by our system.
 }
 \end{figure}
+
 \section{Object Tracking}
 Having formed a 3D model of a scene, the next step in ultrasound augmentation is to track an ultrasound probe. To that end, we mounted a multi-cubed, color-tagged marker (designed by InnerOptic) on the probe.  The colors of the cube are red, blue and green. They are optimized for the response curves of the color detectors in the camera. By determining the intersection of three adjacent faces on the cubes, we can determine the position and the orientation of the ultrasound probe.
 
 To simplify and speed the tracking algorithm, instead of estimating the specific location of each cube face, we estimate the planes that contain each of the faces of the cube and then solve for the intersection of those planes. The plane detection method begins with color pixel detection, using statistical models of the appearance of the cube faces under a range of lighting conditions. Depending on the image from the projector, the ambient light and the adjacent objects in the environment, extraneous pixels may be incorrectly identified as cube pixels based on color alone. To eliminate extraneous pixels, we compute the gravity centers for each target color using robust statistics. Knowing the expected position of each face relative to the others, we can redefine the estimates of the centers of gravity by eliminating colored pixels that are inconsistent with the expected relative positions of each face and too far from the estimated centers of gravity. To further reduce the influence of extraneous pixels, we also estimate the equations of the planes using the random sample consensus (RANSAC) algorithm. It randomly picks three points, computes the plane defined by them and then scores that plane based on how many other cube points are included in that plane. Ultimately, the planes with the best scores are chosen. The intersection point of the three chosen planes is then used to define the position and the orientation of the probe in space. A sample result of three detected planes intersecting the scene is shown in Fig. 4.
 
 \begin{figure}
-\includegraphics[width=10cm,height=10cm,keepaspectratio]{linesNotFound}
-\caption{
-a: The raw point cloud before cube detection.}
-\includegraphics[width=10cm,height=10cm,keepaspectratio]{linesPointCloud}
+\centering
+\begin{tabular}{cc}
+\centering
+\includegraphics[scale=.233]{linesNotFound} &
+\includegraphics[scale=.233]{linesPointCloud}\\
+(a) & (b)
+\end{tabular}
 
 \caption{
-b: The collected point cloud is shown in white. The intersection of the estimated red, green and blue planes with that point cloud are shown. This indicates that the faces of the cube are well represented by the estimated planes.
+(a) The raw point cloud before cube detection, (b) The collected point cloud is shown in white. The intersection of the estimated red, green and blue planes with that point cloud are shown. This indicates that the faces of the cube are well represented by the estimated planes.
 }
 \end{figure}
+
 \section{Conclusion}
 Ongoing work focuses on quantifying the performance of this algorithm.  Current studies indicate 2mm consistency within a 30cm x 60cm x 60cm operating environment.  The system has been shown to be insensitive to a wide range of ambient light brightness and to the image being projected into the scene.
 
