@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.6.9)  9 JUN 2017 14:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.6.9)  9 JUN 2017 15:29
 entering extended mode
 **./AugmentedUltrasound.tex
 (AugmentedUltrasound.tex
@@ -386,32 +386,24 @@ Package pdftex.def Info: rockem.png used on input line 72.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4 <./dino.png (PNG copy)> <./block.png (PNG copy)> <./rockem.png (PNG copy)>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 85.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 85.
 
 <linesNotFound.png, id=23, 749.04843pt x 573.64313pt>
 File: linesNotFound.png Graphic file (type png)
  <use linesNotFound.png>
-Package pdftex.def Info: linesNotFound.png used on input line 100.
-(pdftex.def)             Requested size: 284.52707pt x 217.89912pt.
+Package pdftex.def Info: linesNotFound.png used on input line 87.
+(pdftex.def)             Requested size: 174.52913pt x 133.6595pt.
 
 <linesPointCloud.png, id=24, 715.17188pt x 569.87906pt>
 File: linesPointCloud.png Graphic file (type png)
 
 <use linesPointCloud.png>
-Package pdftex.def Info: linesPointCloud.png used on input line 103.
-(pdftex.def)             Requested size: 284.525pt x 226.7215pt.
- [5] [6 <./linesNotFound.png> <./linesPointCloud.png>]
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ú in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ù in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ú in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ù in font cmr10!
+Package pdftex.def Info: linesPointCloud.png used on input line 88.
+(pdftex.def)             Requested size: 166.63585pt x 132.78246pt.
+ [5]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ú in font cmr10!
@@ -419,27 +411,44 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
 
-Overfull \hbox (7.18166pt too wide) in paragraph at lines 123--128
+Overfull \hbox (9.18166pt too wide) in paragraph at lines 113--114
 []\OT1/cmr/m/n/10 NIH/NIBIB: In-field FAST pro-ce-dure sup-port and au-toma-tio
-n (R43EB016621)
+n (R43EB016621) 
  []
 
-[7] (AugmentedUltrasound.aux) ) 
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+[6 <./linesNotFound.png> <./linesPointCloud.png>] (AugmentedUltrasound.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3532 strings out of 493323
- 53585 string characters out of 3139061
+ 3548 strings out of 493323
+ 53733 string characters out of 3139061
  225352 words of memory out of 3000000
- 7033 multiletter control sequences out of 15000+200000
- 5457 words of font info for 20 fonts, out of 3000000 for 9000
+ 7043 multiletter control sequences out of 15000+200000
+ 7289 words of font info for 26 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,9n,49p,1574b,355s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmbx9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10
-.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on AugmentedUltrasound.pdf (7 pages, 1505128 bytes).
+ 44i,12n,49p,1574b,355s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr9.pfb>
+Output written on AugmentedUltrasound.pdf (6 pages, 1514896 bytes).
 PDF statistics:
- 49 PDF objects out of 1000 (max. 8388607)
+ 48 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
