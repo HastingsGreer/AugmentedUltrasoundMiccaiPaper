@@ -1,6 +1,7 @@
 \documentclass{llncs}
 %
 \usepackage{makeidx}
+\usepackage{graphicx}
 %
 \begin{document}
 %
@@ -16,6 +17,12 @@
 \mainmatter
 \maketitle
 
+\begin{abstract}
+By using a laser projector and high speed camera, we can add three capabilities to an ultrasound system: tracking the probe, tracking the patient, and projecting information onto the probe and patient. We can use these capabilities to guide an untrained operator to take high quality, well framed ultrasound images which can be passed to existing or novel diagnosis algorithms
+\end{abstract}
+
+
+\section{Motivation}
 We have developed algorithms that analyze ultrasound signals to detect internal bleeding.  These algorithms are part of a point-of-care, computer-assisted ultrasound system that is intended to aid in the triage of patients with abdominal trauma at the scene of an accident, helping emergency medical service (EMS) personnel save lives by assisting them in deciding when to order expedited transport and initiate life-saving measures in the field.
 
 The remaining challenge with deploying our point-of-care, computer-assisted ultrasound system is, even though internal bleeding can be automatically detected, the EMS personnel must know where to place and how to manipulate an ultrasound probe at various anatomic locations in order to thoroughly examine the regions of the abdomen where blood tends to pool. Additionally, the EMS personnel must ensure that high-quality ultrasound data is being acquired. These positioning and data-quality-assessment tasks require extensive anatomic and ultrasound training—beyond what most clinicians and/or EMS personnel typically receive.
@@ -32,6 +39,8 @@ In the next section, we discuss how we formed a three-dimensional (3D) model of 
 \section{3D Scene Modeling}
 To form a 3D model of a scene, we replicated and extended the work in a paper by researchers at Carnegie Mellon University that involved a structured light 3D scanner based on a portable projector, which uses laser projection technology, and a high-speed camera. (See Fig. 1, adapted from [1].) The laser projector draws only one line of a projected image at a time, but it does so fast enough to enable the human eye to see the entire image. The high-speed camera is capable of precise timing and fast shutter speed. These properties allow the camera to take a picture as the projector draws a specific line of the image. Through a one-time calibration of the camera and the projector, and through using structured-light reconstruction algorithms, each point on a projected line can be efficiently and accurately triangulated to a point in 3D space (i.e., each illuminated point seen in a camera image is at the intersection of the plane/line of light emitted by the projector and the corresponding pixel/line viewed by the camera). The camera/projector calibration process is adapted from the method developed at Brown University [2], which is based on OpenCV and uses the camera application programming interface (API).
 \begin{figure}
+\centering
+\includegraphics[width=10cm,height=10cm,keepaspectratio]{plan}
 \caption{
 The augmented reality system uses a pico projector (based on laser projection technology) to display an image in a scene. A high-speed camera sees the individual lines being drawn by the projector to create the image. Via appropriate camera calibration, custom circuitry to detect the vertical reset of the laser and depth from structured lighting algorithms, a 3D model of the scene can be formed at very high resolution in about one second.
 }
@@ -41,6 +50,7 @@ Our system is composed of a Grasshopper3 camera and a SONY mobile projector MP C
 The augmented ultrasound system works under varied lighting conditions for three reasons. First, the shutter speed simplifies the detection of which pixels are illuminated by the projector. It suppresses ambient light, even direct sunlight, simply by remaining open for no more than a tiny fraction of a second.
 
 \begin{figure}
+\includegraphics[width=10cm,height=10cm,keepaspectratio]{circuit}
 \caption{
 Circuit diagram of the photo detector system used to determine when the laser returns to the upper left and begins drawing a new image (approximately every 1/60th of a second).
 }
@@ -52,6 +62,9 @@ The most difficult challenge with our low-cost, compact ultrasound augmentation 
 Sample results from the system are shown in Fig. 3.  We are now optimizing the system for speed by expanding upon the trigger mode on the camera to capture up to three lines from each frame (i.e., every time the laser sweeps the scene).
 
 \begin{figure}
+\includegraphics[width=10cm,height=10cm,keepaspectratio]{dino}
+\includegraphics[width=10cm,height=10cm,keepaspectratio]{block}
+\includegraphics[width=10cm,height=10cm,keepaspectratio]{rockem}
 \caption{
 Figure 3. Examples of 3D scenes that can be captured by our system.
 }
@@ -62,9 +75,13 @@ Having formed a 3D model of a scene, the next step in ultrasound augmentation is
 To simplify and speed the tracking algorithm, instead of estimating the specific location of each cube face, we estimate the planes that contain each of the faces of the cube and then solve for the intersection of those planes. The plane detection method begins with color pixel detection, using statistical models of the appearance of the cube faces under a range of lighting conditions. Depending on the image from the projector, the ambient light and the adjacent objects in the environment, extraneous pixels may be incorrectly identified as cube pixels based on color alone. To eliminate extraneous pixels, we compute the gravity centers for each target color using robust statistics. Knowing the expected position of each face relative to the others, we can redefine the estimates of the centers of gravity by eliminating colored pixels that are inconsistent with the expected relative positions of each face and too far from the estimated centers of gravity. To further reduce the influence of extraneous pixels, we also estimate the equations of the planes using the random sample consensus (RANSAC) algorithm. It randomly picks three points, computes the plane defined by them and then scores that plane based on how many other cube points are included in that plane. Ultimately, the planes with the best scores are chosen. The intersection point of the three chosen planes is then used to define the position and the orientation of the probe in space. A sample result of three detected planes intersecting the scene is shown in Fig. 4.
 
 \begin{figure}
+\includegraphics[width=10cm,height=10cm,keepaspectratio]{linesNotFound}
 \caption{
-Figure 4 a: The raw point cloud before cube detection.
-Figure 4 b: The collected point cloud is shown in white. The intersection of the estimated red, green and blue planes with that point cloud are shown. This indicates that the faces of the cube are well represented by the estimated planes.
+a: The raw point cloud before cube detection.}
+\includegraphics[width=10cm,height=10cm,keepaspectratio]{linesPointCloud}
+
+\caption{
+b: The collected point cloud is shown in white. The intersection of the estimated red, green and blue planes with that point cloud are shown. This indicates that the faces of the cube are well represented by the estimated planes.
 }
 \end{figure}
 \section{Conclusion}
