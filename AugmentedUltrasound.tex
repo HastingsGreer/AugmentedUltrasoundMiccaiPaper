@@ -103,6 +103,13 @@ Ongoing work focuses on quantifying the performance of this algorithm.  Current 
 
 The probe tracker data will be used, in combination with a custom image reconstruction technique, to compound a sequence of imprecisely and sparsely tracked ultrasound images into a complete 3D Volume.
 
+First, the volume and pointcloud will be analyzed for image suitability. If the image is not suitable for the diagnosis requested by the EMS, information on how to improve the image will be projected directly onto the patient or probe, such as: 
+Lateral adjustements of the probe,
+angle adjustment of the probe
+application of ultrasound gel
+increase or decrease in probe pressure.
+
+Once the system is satisfied with the image quality, This volume will be automatically analyzed by domain specific algorithms that produce information needed by EMS, such as vein position and patency, presence of pneumothorax, or presence of abdominal bleeding. Information such as abdominal bleeding or pneumothorax can be presented on a traditional screen or via audio. Vein position can be presented as color projected directly onto the skin above the vein.
 
 The final system is illustrated in Fig. 5.  The figure depicts the system indicating where a needle should be inserted for peripheral vascular access with ultrasound guidance.
 
