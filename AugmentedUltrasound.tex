@@ -4,6 +4,8 @@
 \usepackage{graphicx}
 \usepackage{mwe}
 \usepackage{subfig}
+\usepackage{pgfplotstable}
+\usepackage{pgfplots}
 %
 \begin{document}
 %
@@ -93,6 +95,19 @@ To simplify and speed the tracking algorithm, instead of estimating the specific
 (a) The raw point cloud before cube detection, (b) The collected point cloud is shown in white. The intersection of the estimated red, green and blue planes with that point cloud are shown. This indicates that the faces of the cube are well represented by the estimated planes.
 }
 \end{figure}
+
+Our system can trade frame rate for resolution of the point cloud, so we tested the precision of tracking for a variety of point cloud resolutions. We found that precision did not improve past 45 lines per frame, achieving a standard deviation of 1.2 mm per axes
+
+\begin{tikzpicture}
+\begin{axis}[
+   xlabel=Lines per Frame,
+   ylabel=RMS Error]
+\addplot table [y=sigma, x=lines]{variance.dat};
+\end{axis}
+\end{tikzpicture}
+
+
+
 
 \section{Projecting onto the Scene}
 
