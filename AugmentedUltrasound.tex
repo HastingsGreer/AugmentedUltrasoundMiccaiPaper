@@ -25,7 +25,7 @@ By using a laser projector and high speed camera, we can add three capabilities 
 
 
 \section{Motivation}
-We have developed algorithms that analyze ultrasound signals to detect internal bleeding.  These algorithms are part of a point-of-care, computer-assisted ultrasound system that is intended to aid in the triage of patients with abdominal trauma at the scene of an accident, helping emergency medical service (EMS) personnel save lives by assisting them in deciding when to order expedited transport and initiate life-saving measures in the field.
+We have developed algorithms that analyze ultrasound signals to detect internal bleeding. [3] These algorithms are part of a point-of-care, computer-assisted ultrasound system that is intended to aid in the triage of patients with abdominal trauma at the scene of an accident, helping emergency medical service (EMS) personnel save lives by assisting them in deciding when to order expedited transport and initiate life-saving measures in the field.
 
 The remaining challenge with deploying our point-of-care, computer-assisted ultrasound system is, even though internal bleeding can be automatically detected, the EMS personnel must know where to place and how to manipulate an ultrasound probe at various anatomic locations in order to thoroughly examine the regions of the abdomen where blood tends to pool. Additionally, the EMS personnel must ensure that high-quality ultrasound data is being acquired. These positioning and data-quality-assessment tasks require extensive anatomic and ultrasound training—beyond what most clinicians and/or EMS personnel typically receive.
 
@@ -85,7 +85,7 @@ To simplify and speed the tracking algorithm, instead of estimating the specific
 \begin{tabular}{cc}
 \centering
 \includegraphics[scale=.233]{linesNotFound} &
-\includegraphics[scale=.233]{linesPointCloud}\\
+\includegraphics[scale=.233]{linesPointcloud}\\
 (a) & (b)
 \end{tabular}
 
@@ -94,15 +94,22 @@ To simplify and speed the tracking algorithm, instead of estimating the specific
 }
 \end{figure}
 
-\section{Projection into the Scene}
+\section{Projecting onto the Scene}
 
 Once a point cloud is captured and the probe is located, the system must project information onto surfaces int he scene. Our approach takes advantage of an unusual property of our scanner: that it can trade off between point cloud density and frame rate. A very high density point cloud is captured as the system is initialized, and updated as needed if the patient moves, for use in reprojection. Coloring operations, such as drawing circles, lines, images, or text, are applied to this high resolution point cloud. This allows positions and orientations of text to be manipulated in 3-D, 1 to 1 scale coordinates. Each relevant point is then colored by tracing a ray through it into the virtual image. Finally, the high resolution pointcloud is transformed by "camera matrix" of the projector, and drawn to a bitmap, which is displayed through the projector. 
 
 \section{Conclusion}
 Ongoing work focuses on quantifying the performance of this algorithm.  Current studies indicate 2mm consistency within a 30cm x 60cm x 60cm operating environment.  The system has been shown to be insensitive to a wide range of ambient light brightness and to the image being projected into the scene.
 
-The probe tracker data will be used, in combination with a custom image reconstruction technique, to compound a sequence of imprecisely and sparsely tracked ultrasound images into a complete 3D scan.
+The probe tracker data will be used, in combination with a custom image reconstruction technique, to compound a sequence of imprecisely and sparsely tracked ultrasound images into a complete 3D Volume.
 
+First, the volume and pointcloud will be analyzed for image suitability. If the image is not suitable for the diagnosis requested by the EMS, information on how to improve the image will be projected directly onto the patient or probe, such as: 
+Lateral adjustements of the probe,
+angle adjustment of the probe
+application of ultrasound gel
+increase or decrease in probe pressure.
+
+Once the system is satisfied with the image quality, This volume will be automatically analyzed by domain specific algorithms that produce information needed by EMS, such as vein position and patency, presence of pneumothorax, or presence of abdominal bleeding. Information such as abdominal bleeding or pneumothorax can be presented on a traditional screen or via audio. Vein position can be presented as color projected directly onto the skin above the vein.
 
 The final system is illustrated in Fig. 5.  The figure depicts the system indicating where a needle should be inserted for peripheral vascular access with ultrasound guidance.
 
@@ -139,6 +146,9 @@ C.Mertz, S. J. Koppal, S. Sia, S.G. Narasimhan. A low powered structured light s
 
 \bibitem[2]{2}
 D. Moreno, G. Taubin. Simple, Accurate, and Robust Projector-Camera Calibration
+
+\bibitem[3]{3}
+S. R. Aylward, M. McCormick, H. J. Kang, S. Razzaque, R. Kwitt, M. Niethammer. Ultrasound Spectroscopy
 
 \end{thebibliography}
 
