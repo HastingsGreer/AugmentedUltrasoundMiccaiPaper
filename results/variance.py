@@ -22,10 +22,10 @@ for file in sorted(os.listdir(root)):
     error = data - average
     rms = np.sqrt(np.sum(error * error) / error.shape[0])
     print "rms:", rms
-    """plt.scatter(error.transpose()[0], error.transpose()[2])
+    plt.scatter(error.transpose()[0], error.transpose()[2])
     plt.show()
     plt.plot(error)
-    plt.show()"""
+    plt.show()
     out.write(str(lines) + " " + str(rms)+ "\n")
     print np.cov(data.transpose())
 

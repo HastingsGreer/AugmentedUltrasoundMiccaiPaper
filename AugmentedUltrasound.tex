@@ -40,6 +40,8 @@ To operate, the augmented ultrasound system must be able to track an ultrasound 
 
 In the next section, we discuss how we formed a three-dimensional (3D) model of a scene using a laser projector and a high-speed camera. Then, we describe how we track objects in that scene.
 
+
+
 \section{3D Scene Modeling}
 To form a 3D model of a scene, we replicated and extended the work in a paper by researchers at Carnegie Mellon University that involved a structured light 3D scanner based on a portable projector, which uses laser projection technology, and a high-speed camera. (See Fig. 1, adapted from [1].) The laser projector draws only one line of a projected image at a time, but it does so fast enough to enable the human eye to see the entire image. The high-speed camera is capable of precise timing and fast shutter speed. These properties allow the camera to take a picture as the projector draws a specific line of the image. Through a one-time calibration of the camera and the projector, and through using structured-light reconstruction algorithms, each point on a projected line can be efficiently and accurately triangulated to a point in 3D space (i.e., each illuminated point seen in a camera image is at the intersection of the plane/line of light emitted by the projector and the corresponding pixel/line viewed by the camera). The camera/projector calibration process is adapted from the method developed at Brown University [2], which is based on OpenCV and uses the camera application programming interface (API).
 \begin{figure}
@@ -51,6 +53,16 @@ The augmented reality system uses a pico projector (based on laser projection te
 \end{figure}
 
 Our system is composed of a Grasshopper3 camera and a SONY mobile projector MP CL1. With a resolution of 2048 x 1536, we can use the camera at a frame rate of 300 fps. The update rate per image of the laser projector is 60Hz in scan line order. Given its resolution of 1920 x 720, it projects 43,200 lines/s.
+\begin{table}
+\caption{Hardware used, with prices}
+\begin{tabular}{lll}
+\hline\noalign{\smallskip}
+Device & Manufacturer & Price \\ \noalign{\smallskip}\hline\noalign{\smallskip} 
+Grasshopper 3 GS3-U3-32S4C-C & Point Grey &  \$975.00\\ 
+MP-CL1 Projector & Sony & \$349.00 \\ 
+Photodiode, BPW34S & Vishay Semiconductor Opto Division & \$6.66 \\ \hline
+\end{tabular}
+\end{table}
 
 The augmented ultrasound system works under varied lighting conditions for three reasons. First, the shutter speed simplifies the detection of which pixels are illuminated by the projector. It suppresses ambient light, even direct sunlight, simply by remaining open for no more than a tiny fraction of a second.
 
@@ -78,6 +90,7 @@ Examples of 3D scenes captured by our system.
 \end{figure}
 
 \section{Object Tracking}
+
 Having formed a 3D model of a scene, the next step in ultrasound augmentation is to track an ultrasound probe. To that end, we mounted a multi-cubed, color-tagged marker (designed by InnerOptic) on the probe.  The colors of the cube are red, blue and green. They are optimized for the response curves of the color detectors in the camera. By determining the intersection of three adjacent faces on the cubes, we can determine the position and the orientation of the ultrasound probe.
 
 To simplify and speed the tracking algorithm, instead of estimating the specific location of each cube face, we estimate the planes that contain each of the faces of the cube and then solve for the intersection of those planes. The plane detection method begins with color pixel detection, using statistical models of the appearance of the cube faces under a range of lighting conditions. Depending on the image from the projector, the ambient light and the adjacent objects in the environment, extraneous pixels may be incorrectly identified as cube pixels based on color alone. To eliminate extraneous pixels, we compute the gravity centers for each target color using robust statistics. Knowing the expected position of each face relative to the others, we can redefine the estimates of the centers of gravity by eliminating colored pixels that are inconsistent with the expected relative positions of each face and too far from the estimated centers of gravity. To further reduce the influence of extraneous pixels, we also estimate the equations of the planes using the random sample consensus (RANSAC) algorithm. It randomly picks three points, computes the plane defined by them and then scores that plane based on how many other cube points are included in that plane. Ultimately, the planes with the best scores are chosen. The intersection point of the three chosen planes is then used to define the position and the orientation of the probe in space. A sample result of three detected planes intersecting the scene is shown in Fig. 4.
@@ -97,7 +110,7 @@ To simplify and speed the tracking algorithm, instead of estimating the specific
 \end{figure}
 
 Our system can trade frame rate for resolution of the point cloud, so we tested the precision of tracking for a variety of point cloud resolutions. We found that precision did not improve past 45 lines per frame, achieving a standard deviation of 1.2 mm per axes
-
+ 
 \begin{tikzpicture}
 \begin{axis}[
    xlabel=Lines per Frame,
@@ -106,12 +119,29 @@ Our system can trade frame rate for resolution of the point cloud, so we tested 
 \end{axis}
 \end{tikzpicture}
 
+\begin{table}
+\caption{Accuracy }
+\begin{tabular}{r|r|r|r}
+\hline
+Lines per Reconstruction & Lines on Cube & Reconstructions per Second & Variance of Position \\ \hline
+30 & ?? & ?? & ??\\ \hline
+45 & ?? & ?? & ?? \\ \hline
+145 & ?? & ?? & ?? \\ \hline
+245 & ?? & ?? & ?? \\ \hline
 
+\end{tabular}
+\end{table}
 
 
 \section{Projecting onto the Scene}
 
-Once a point cloud is captured and the probe is located, the system must project information onto surfaces int he scene. Our approach takes advantage of an unusual property of our scanner: that it can trade off between point cloud density and frame rate. A very high density point cloud is captured as the system is initialized, and updated as needed if the patient moves, for use in reprojection. Coloring operations, such as drawing circles, lines, images, or text, are applied to this high resolution point cloud. This allows positions and orientations of text to be manipulated in 3-D, 1 to 1 scale coordinates. Each relevant point is then colored by tracing a ray through it into the virtual image. Finally, the high resolution pointcloud is transformed by "camera matrix" of the projector, and drawn to a bitmap, which is displayed through the projector. 
+Once we have captured a pointcloud, located the ultrasound probe, and updated the anaylsis or diagnosis, our system must display the results of analysis onto the patient's skin. The position of the display should be relative to the probe, and undistorted. To aid in this goal, display elements, such as geometrical primitives, images, and lines, are specified in 3-D world coordinates. We support commands such as "Color all points within 4 cm of <60 cm, -12 cm, 3 cm> yellow" or "Project the text 'Poor Contact: Apply pressure' onto the surface 5 cm in front of the ultrasound probe."
+
+To achieve this effect, we use a stored, high resolution point cloud known as the "canvas" that is captured during initialization, and updated rarely. This pointcloud has up to 700 lines, whereas pointclouds used for tracking have only 45 lines. 
+
+Graphics primitives such as spheres or images are drawn onto the canvas, and then once all drawing is complete, the canvas is transformed by the "Camera Matrix" of the projector and projected. This causes each point on a surface in the scene to be illuminated with the color light of its corresponding nearest point in the canvas pointcloud. 
+
+The canvas can be colored using any spatial algorithm, such as ray tracing or volume rendering, without consideration of the properties of the projector or the system as a whole.
 
 \section{Conclusion}
 Ongoing work focuses on quantifying the performance of this algorithm.  Current studies indicate 2mm consistency within a 30cm x 60cm x 60cm operating environment.  The system has been shown to be insensitive to a wide range of ambient light brightness and to the image being projected into the scene.
