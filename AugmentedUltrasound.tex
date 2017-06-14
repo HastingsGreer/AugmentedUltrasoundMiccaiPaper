@@ -77,7 +77,7 @@ This benefit arises because the laser projector illuminates each point very brig
 
 The most difficult challenge with our low-cost, compact ultrasound augmentation system was that the horizontal sync signal produced by the projector/HDMI protocol was not phase-locked to the actual vertical movement of the laser. For this reason, we opted to trigger the camera off the light emitted by the projector, using a photocell and a pair of Operational Amplifiers.  See Fig. 2.
 
-Sample results from the system are shown in Fig. 3.  We are now optimizing the system for speed by expanding upon the trigger mode on the camera to capture up to three lines from each frame (i.e., every time the laser sweeps the scene).
+Sample results from the system are shown in Fig. 3.
 
 \begin{figure}[h]
 \centering
@@ -108,6 +108,8 @@ To simplify and speed the tracking algorithm, instead of estimating the specific
 (a) The raw point cloud before cube detection, (b) The collected point cloud is shown in white. The intersection of the estimated red, green and blue planes with that point cloud are shown. This indicates that the faces of the cube are well represented by the estimated planes.
 }
 \end{figure}
+
+Our camera is capable of up to 300 frames per second, and our projector runs at exactly 60 sweeps per second. However, running the camera at full frame rate does not result in an even coverage of the scene by the captured images. In addition, some frames are not useful because they would be captured as the laser is returning to the top of the screen. Finally, it is only possible to trigger the camera at evenly spaced intervals, a vairable delay after our optical detection circuit fires. In our system, the camera fires three times every time the optical detection circuit is activated by the laser, leading to a speed of 180 lines per second.
 
 Our system can trade frame rate for resolution of the point cloud, so we tested the precision of tracking for a variety of point cloud resolutions. We found that precision did not improve past 45 lines per frame, achieving a standard deviation of 1.2 mm per axes
  
@@ -148,8 +150,7 @@ Ongoing work focuses on quantifying the performance of this algorithm.  Current 
 
 The probe tracker data will be used, in combination with a custom image reconstruction technique, to compound a sequence of imprecisely and sparsely tracked ultrasound images into a complete 3D Volume.
 
-First, the volume and pointcloud will be analyzed for image suitability. If the image is not suitable for the diagnosis requested by the EMS, information on how to improve the image will be projected directly onto the patient or probe, such as: 
-Lateral adjustements of the probe,
+First, the volume and pointcloud will be analyzed for image suitability. If the image is not suitable for the diagnosis requested by the EMS, information on how to improve the image will be projected directly onto the patient or probe. Lateral adjustements of the probe,
 angle adjustment of the probe
 application of ultrasound gel
 increase or decrease in probe pressure.
