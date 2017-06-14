@@ -123,13 +123,13 @@ Our system can trade frame rate for resolution of the point cloud, so we tested 
 
 \begin{table}
 \caption{Accuracy }
-\begin{tabular}{r|r|r|r}
+\begin{tabular}{r|r|r|r|r|r}
 \hline
-Lines per Reconstruction & Lines on Cube & Reconstructions per Second & Variance of Position \\ \hline
-30 & ?? & ?? & ??\\ \hline
-45 & ?? & ?? & ?? \\ \hline
-145 & ?? & ?? & ?? \\ \hline
-245 & ?? & ?? & ?? \\ \hline
+Lines per Reconstruction & Distance & Light Level & Lines on Cube & Reconstructions per Second & Variance of Position \\ \hline
+30 & 60 cm & 400 lux & ?? & ?? & 1.33 cm\\ \hline
+45 &  60 cm & 400 lux & ?? & ?? & .14 cm\\ \hline
+145 & 60 cm & 400 lux & ?? & ?? & .12 cm\\ \hline
+245 & 60 cm & 400 lux & ?? & ?? & .12 cm\\ \hline
 
 \end{tabular}
 \end{table}
@@ -137,7 +137,7 @@ Lines per Reconstruction & Lines on Cube & Reconstructions per Second & Variance
 
 \section{Projecting onto the Scene}
 
-Once we have captured a pointcloud, located the ultrasound probe, and updated the anaylsis or diagnosis, our system must display the results of analysis onto the patient's skin. The position of the display should be relative to the probe, and undistorted. To aid in this goal, display elements, such as geometrical primitives, images, and lines, are specified in 3-D world coordinates. We support commands such as "Color all points within 4 cm of <60 cm, -12 cm, 3 cm> yellow" or "Project the text 'Poor Contact: Apply pressure' onto the surface 5 cm in front of the ultrasound probe."
+Once we have captured a pointcloud, located the ultrasound probe, and updated the anaylsis or diagnosis, our system must display the results of analysis onto the patient's skin. The position of the display should be relative to the probe, and undistorted. To aid in this goal, display elements, such as geometrical primitives, images, and lines, are specified in 3-D world coordinates. We support commands such as "Color all points within 4 cm of $<60 cm, -12 cm, 3 cm>$ yellow" or "Project the text 'Poor Contact: Apply pressure' onto the surface 5 cm in front of the ultrasound probe."
 
 To achieve this effect, we use a stored, high resolution point cloud known as the "canvas" that is captured during initialization, and updated rarely. This pointcloud has up to 700 lines, whereas pointclouds used for tracking have only 45 lines. 
 
@@ -145,12 +145,14 @@ Graphics primitives such as spheres or images are drawn onto the canvas, and the
 
 The canvas can be colored using any spatial algorithm, such as ray tracing or volume rendering, without consideration of the properties of the projector or the system as a whole.
 
+Although the frame rate is low, out system does not rely on high frame rate to avoid nausea, unlike other AR paradigms, because the images are slow moving and stay fixed with respect to the environment 
+
 \section{Conclusion}
 Ongoing work focuses on quantifying the performance of this algorithm.  Current studies indicate 2mm consistency within a 30cm x 60cm x 60cm operating environment.  The system has been shown to be insensitive to a wide range of ambient light brightness and to the image being projected into the scene.
 
 The probe tracker data will be used, in combination with a custom image reconstruction technique, to compound a sequence of imprecisely and sparsely tracked ultrasound images into a complete 3D Volume.
 
-First, the volume and pointcloud will be analyzed for image suitability. If the image is not suitable for the diagnosis requested by the EMS, information on how to improve the image will be projected directly onto the patient or probe. Lateral adjustements of the probe,
+First, the volume and pointcloud will be analyzed for image suitability. If the image is not suitable for the diagnosis requested by the EMS, information on how to improve the image will be projected directly onto the patient or probe. Lateral adjustments of the probe,
 angle adjustment of the probe
 application of ultrasound gel
 increase or decrease in probe pressure.
