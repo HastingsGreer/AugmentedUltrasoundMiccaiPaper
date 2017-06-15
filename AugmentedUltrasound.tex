@@ -122,16 +122,25 @@ Our system can trade frame rate for resolution of the point cloud, so we tested 
 \end{tikzpicture}
 
 \begin{table}
-\caption{Accuracy }
-\begin{tabular}{r|r|r|r|r|r}
+\caption{Accuracy at 60cm and 400Lux }
+\begin{tabular}{c|ccc}
 \hline
-Lines per Reconstruction & Distance & Light Level & Lines on Cube & Reconstructions per Second & Variance of Position \\ \hline
-30 & 60 cm & 400 lux & ?? & ?? & 1.33 cm\\ \hline
-45 &  60 cm & 400 lux & ?? & ?? & .14 cm\\ \hline
-145 & 60 cm & 400 lux & ?? & ?? & .12 cm\\ \hline
-245 & 60 cm & 400 lux & ?? & ?? & .12 cm\\ \hline
-
+\hline
+Lines on cube & & Std Deviation & \\
+ & x & y & z\\
+\hline
+4  & 3.001cm & 2.248cm & 6.846cm\\
+5  & 0.884cm & 1.134cm & 2.937cm\\
+6  & 0.301cm & 0.875cm & 3.075cm\\
+7  & 0.229cm & 0.570cm & 1.000cm\\
+8  & 0.105cm & 0.455cm & 1.234cm\\
+10 & 0.074cm & 0.087cm & 0.084cm\\
+20 & 0.065cm & 0.077cm & 0.062cm\\
+30 & 0.057cm & 0.070cm & 0.062cm\\
+40 & 0.057cm & 0.068cm & 0.055cm\\
+\hline
 \end{tabular}
+\centering
 \end{table}
 
 
