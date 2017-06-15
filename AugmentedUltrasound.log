@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.6.9)  15 JUN 2017 16:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.6.9)  15 JUN 2017 16:59
 entering extended mode
 **./AugmentedUltrasound.tex
 (AugmentedUltrasound.tex
@@ -785,30 +785,27 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 File: circuit.png Graphic file (type png)
  <use circuit.png>
 Package pdftex.def Info: circuit.png used on input line 71.
-(pdftex.def)             Requested size: 235.93047pt x 284.53418pt.
- [2]
-<dino.png, id=17, 1193.20781pt x 700.86844pt>
+(pdftex.def)             Requested size: 117.96255pt x 142.26385pt.
+ [2] [3 <./plan.jpg> <./circuit.png>] <dino.png, id=20, 1193.20781pt x 700.8684
+4pt>
 File: dino.png Graphic file (type png)
- <use dino.png>
+
+<use dino.png>
 Package pdftex.def Info: dino.png used on input line 84.
 (pdftex.def)             Requested size: 167.04796pt x 98.12091pt.
-
-<block.png, id=18, 1180.41pt x 700.86844pt>
+ <block.png, id=21, 1180.41pt x 700.86844pt>
 File: block.png Graphic file (type png)
  <use block.png>
 Package pdftex.def Info: block.png used on input line 85.
 (pdftex.def)             Requested size: 165.25627pt x 98.12091pt.
 
-<rockem.png, id=19, 1193.20781pt x 700.86844pt>
+<rockem.png, id=22, 1193.20781pt x 700.86844pt>
 File: rockem.png Graphic file (type png)
  <use rockem.png>
 Package pdftex.def Info: rockem.png used on input line 86.
 (pdftex.def)             Requested size: 167.04796pt x 98.12091pt.
+ [4 <./dino.png (PNG copy)> <./block.png (PNG copy)> <./rockem.png (PNG copy)>]
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[3 <./plan.jpg>] [4 <./circuit.png>]
 <linesNotFound.png, id=26, 749.04843pt x 573.64313pt>
 File: linesNotFound.png Graphic file (type png)
  <use linesNotFound.png>
@@ -824,23 +821,27 @@ Package pdftex.def Info: linesPointcloud.png used on input line 103.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5 <./dino.png (PNG copy)> <./block.png (PNG copy)> <./rockem.png (PNG copy)>]
+ [5 <./linesNotFound.png> <./linesPointcloud.png>]
 PGFPlots: reading {variance.dat}
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+<45_lines_error.pdf, id=31, 462.52798pt x 346.89601pt>
+File: 45_lines_error.pdf Graphic file (type pdf)
 
- [6 <./linesNotFound.png> <./linesPointcloud.png>] [7]
-<Hastings_arm.jpg, id=40, 3035.34pt x 4047.12pt>
+<use 45_lines_error.pdf>
+Package pdftex.def Info: 45_lines_error.pdf used on input line 126.
+(pdftex.def)             Requested size: 323.76736pt x 242.82555pt.
+ [6] [7 <./45_lines_error.pdf>]
+<Hastings_arm.jpg, id=61, 3035.34pt x 4047.12pt>
 File: Hastings_arm.jpg Graphic file (type jpg)
  <use Hastings_arm.jpg>
-Package pdftex.def Info: Hastings_arm.jpg used on input line 177.
+Package pdftex.def Info: Hastings_arm.jpg used on input line 184.
 (pdftex.def)             Requested size: 117.36346pt x 156.49014pt.
 
-<Hastings_arm_pointcloud.png, id=41, 633.11531pt x 457.71pt>
+<Hastings_arm_pointcloud.png, id=62, 633.11531pt x 457.71pt>
 File: Hastings_arm_pointcloud.png Graphic file (type png)
 
 <use Hastings_arm_pointcloud.png>
-Package pdftex.def Info: Hastings_arm_pointcloud.png used on input line 178.
+Package pdftex.def Info: Hastings_arm_pointcloud.png used on input line 185.
 (pdftex.def)             Requested size: 216.45425pt x 156.49014pt.
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
@@ -849,11 +850,12 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
 
-Overfull \hbox (9.18166pt too wide) in paragraph at lines 191--192
+Overfull \hbox (9.18166pt too wide) in paragraph at lines 197--198
 []\OT1/cmr/m/n/10 NIH/NIBIB: In-field FAST pro-ce-dure sup-port and au-toma-tio
 n (R43EB016621) 
  []
 
+[8]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ú in font cmr10!
@@ -866,26 +868,27 @@ Missing character: There is no ú in font cmr10!
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
-[8] [9 <./Hastings_arm.jpg> <./Hastings_arm_pointcloud.png>]
+ [9 <./Hastings_arm.jpg> <./Hastings_arm_pointcloud.png>]
 (AugmentedUltrasound.aux) ) 
 Here is how much of TeX's memory you used:
- 24096 strings out of 493323
- 623575 string characters out of 3139061
+ 24101 strings out of 493323
+ 623684 string characters out of 3139061
  900178 words of memory out of 3000000
- 27227 multiletter control sequences out of 15000+200000
+ 27231 multiletter control sequences out of 15000+200000
  7289 words of font info for 26 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,13n,103p,1588b,1756s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 69i,13n,103p,1574b,1885s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
 onts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
 cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pf
 b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on AugmentedUltrasound.pdf (9 pages, 3974190 bytes).
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on AugmentedUltrasound.pdf (9 pages, 4020186 bytes).
 PDF statistics:
- 74 PDF objects out of 1000 (max. 8388607)
+ 98 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 63 words of extra memory for PDF output out of 10000 (max. 10000000)
 
