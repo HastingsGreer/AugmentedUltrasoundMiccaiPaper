@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.6.9)  15 JUN 2017 16:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.1)  16 JUN 2017 16:19
 entering extended mode
 **./AugmentedUltrasound.tex
 (AugmentedUltrasound.tex
-LaTeX2e <2017-04-15>
-Babel <3.10> and hyphenation patterns for 75 language(s) loaded.
+LaTeX2e <2015/10/01> patch level 2
+Babel <3.9n> and hyphenation patterns for 69 languages loaded.
 (llncs.cls
 Document Class: llncs 2015/06/24 v2.20 
  LaTeX document class for Lecture Notes in Computer Science
@@ -25,7 +25,7 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \bibindent=\dimen102
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\multicol.sty"
-Package: multicol 2017/04/11 v1.8q multicolumn formatting (FMi)
+Package: multicol 2015/08/19 v1.8n multicolumn formatting (FMi)
 \c@tracingmulticols=\count87
 \mult@box=\box26
 \multicol@leftmargin=\dimen103
@@ -137,31 +137,31 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks18
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
-Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: pdftex.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 95.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
-File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count116
 ))
 \Gin@req@height=\dimen125
 \Gin@req@width=\dimen126
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\mwe\mwe.sty"
+("C:\Users\aylward\AppData\Local\Programs\MiKTeX 2.9\tex\latex\mwe\mwe.sty"
 Package: mwe 2012/05/15 v0.3 Package to support minimal working examples (MWE)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lipsum\lipsum.sty"
@@ -193,14 +193,14 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 \c@blind@pangramcount=\count134
 \c@blind@pangrammax=\count135
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\subfig\subfig.sty"
+("C:\Users\aylward\AppData\Local\Programs\MiKTeX 2.9\tex\latex\subfig\subfig.st
+y"
 Package: subfig 2005/06/28 ver: 1.3 subfig package
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
-Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
 \captionmargin=\dimen127
 \captionmargin@=\dimen128
@@ -316,21 +316,21 @@ File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
 ex"
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
 )) ("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
-Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
-File: color.cfg 2016/01/02 v1.6 sample color configuration
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
-Package xcolor Info: Model `RGB' extended on input line 1364.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcore.code.tex"
 Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
@@ -639,7 +639,7 @@ File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
 tex"
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\numtable\pgfplotstable.colty
 pe.code.tex")) ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
-Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen195
 \extrarowheight=\dimen196
 \NC@list=\toks35
@@ -676,15 +676,16 @@ LaTeX Font Info:    ... okay on input line 10.
 \makeMPintoPDFobject=\count176
 \everyMPtoPDFconversion=\toks37
 ) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
-Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
-Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -692,33 +693,31 @@ Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
 Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
+(grfext)             \AppendGraphicsExtensions on input line 452.
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
@@ -735,160 +734,127 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 22.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 22.
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no î in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ú in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ù in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ú in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ù in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ú in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ô in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ù in font cmr10!
 [1
 
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ô in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ô in font cmr10!
-
+{C:/Users/aylward/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 <plan.jpg, id=12, 550.055pt x 198.7425pt>
 File: plan.jpg Graphic file (type jpg)
  <use plan.jpg>
-Package pdftex.def Info: plan.jpg used on input line 49.
+Package pdftex.def Info: plan.jpg used on input line 50.
 (pdftex.def)             Requested size: 284.53625pt x 102.80688pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 58.
+(Font)              <9> on input line 59.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 58.
+(Font)              <6> on input line 59.
 
-<circuit.png, id=13, 350.81062pt x 423.08063pt>
+<circuit.png, id=13, 325.96782pt x 360.59718pt>
 File: circuit.png Graphic file (type png)
  <use circuit.png>
-Package pdftex.def Info: circuit.png used on input line 71.
-(pdftex.def)             Requested size: 117.96255pt x 142.26385pt.
- [2] [3 <./plan.jpg> <./circuit.png>] <dino.png, id=20, 1193.20781pt x 700.8684
-4pt>
+Package pdftex.def Info: circuit.png used on input line 72.
+(pdftex.def)             Requested size: 90.01694pt x 99.58464pt.
+
+<CircuitSignalProcessing.png, id=14, 392.21532pt x 172.39406pt>
+File: CircuitSignalProcessing.png Graphic file (type png)
+
+<use CircuitSignalProcessing.png>
+Package pdftex.def Info: CircuitSignalProcessing.png used on input line 73.
+(pdftex.def)             Requested size: 226.56938pt x 99.58464pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2] <dino.png, id=18, 965.85844pt x 560.0925pt>
 File: dino.png Graphic file (type png)
+ <use dino.png>
+Package pdftex.def Info: dino.png used on input line 88.
+(pdftex.def)             Requested size: 166.81708pt x 96.73918pt.
 
-<use dino.png>
-Package pdftex.def Info: dino.png used on input line 84.
-(pdftex.def)             Requested size: 167.04796pt x 98.12091pt.
- <block.png, id=21, 1180.41pt x 700.86844pt>
-File: block.png Graphic file (type png)
- <use block.png>
-Package pdftex.def Info: block.png used on input line 85.
-(pdftex.def)             Requested size: 165.25627pt x 98.12091pt.
-
-<rockem.png, id=22, 1193.20781pt x 700.86844pt>
+<rockem.png, id=19, 726.46407pt x 413.29407pt>
 File: rockem.png Graphic file (type png)
  <use rockem.png>
-Package pdftex.def Info: rockem.png used on input line 86.
-(pdftex.def)             Requested size: 167.04796pt x 98.12091pt.
- [4 <./dino.png (PNG copy)> <./block.png (PNG copy)> <./rockem.png (PNG copy)>]
+Package pdftex.def Info: rockem.png used on input line 89.
+(pdftex.def)             Requested size: 170.0429pt x 96.73918pt.
 
-<linesNotFound.png, id=26, 749.04843pt x 573.64313pt>
-File: linesNotFound.png Graphic file (type png)
- <use linesNotFound.png>
-Package pdftex.def Info: linesNotFound.png used on input line 102.
-(pdftex.def)             Requested size: 174.52913pt x 133.6595pt.
 
-<linesPointcloud.png, id=27, 715.17188pt x 569.87906pt>
-File: linesPointcloud.png Graphic file (type png)
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-<use linesPointcloud.png>
-Package pdftex.def Info: linesPointcloud.png used on input line 103.
-(pdftex.def)             Requested size: 166.63585pt x 132.78246pt.
+[3 <./plan.jpg>] [4 <./circuit.png> <./CircuitSignalProcessing.png> <./dino.png
+> <./rockem.png>] <Final-Setup.jpg, id=26, 1614.03pt x 1193.45876pt>
+File: Final-Setup.jpg Graphic file (type jpg)
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+<use Final-Setup.jpg>
+Package pdftex.def Info: Final-Setup.jpg used on input line 105.
+(pdftex.def)             Requested size: 113.81102pt x 84.1516pt.
 
- [5 <./linesNotFound.png> <./linesPointcloud.png>]
+<Final-Reconstruction.png, id=27, 1020.06094pt x 520.19344pt>
+File: Final-Reconstruction.png Graphic file (type png)
+
+<use Final-Reconstruction.png>
+Package pdftex.def Info: Final-Reconstruction.png used on input line 106.
+(pdftex.def)             Requested size: 113.81102pt x 58.03902pt.
+
+<Final-CameraView.jpg, id=28, 1371.1225pt x 801.99625pt>
+File: Final-CameraView.jpg Graphic file (type jpg)
+
+<use Final-CameraView.jpg>
+Package pdftex.def Info: Final-CameraView.jpg used on input line 107.
+(pdftex.def)             Requested size: 113.81102pt x 66.55954pt.
+
+Overfull \hbox (2.70949pt too wide) in paragraph at lines 103--110
+ [][] 
+ []
+
 PGFPlots: reading {variance.dat}
-
-<45_lines_error.pdf, id=31, 462.52798pt x 346.89601pt>
+<45_lines_error.pdf, id=29, 462.52798pt x 346.89601pt>
 File: 45_lines_error.pdf Graphic file (type pdf)
 
 <use 45_lines_error.pdf>
-Package pdftex.def Info: 45_lines_error.pdf used on input line 126.
+Package pdftex.def Info: 45_lines_error.pdf used on input line 130.
 (pdftex.def)             Requested size: 323.76736pt x 242.82555pt.
- [6] [7 <./45_lines_error.pdf>]
-<Hastings_arm.jpg, id=61, 3035.34pt x 4047.12pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5 <./Final-Setup.jpg> <./Final-Reconstruction.png> <./Final-CameraView.jpg>] 
+[6 <./45_lines_error.pdf>] [7] <Hastings_arm.jpg, id=60, 3035.34pt x 4047.12pt>
 File: Hastings_arm.jpg Graphic file (type jpg)
- <use Hastings_arm.jpg>
-Package pdftex.def Info: Hastings_arm.jpg used on input line 184.
+
+<use Hastings_arm.jpg>
+Package pdftex.def Info: Hastings_arm.jpg used on input line 177.
 (pdftex.def)             Requested size: 117.36346pt x 156.49014pt.
 
-<Hastings_arm_pointcloud.png, id=62, 633.11531pt x 457.71pt>
+<Hastings_arm_pointcloud.png, id=61, 633.11531pt x 457.71pt>
 File: Hastings_arm_pointcloud.png Graphic file (type png)
 
 <use Hastings_arm_pointcloud.png>
-Package pdftex.def Info: Hastings_arm_pointcloud.png used on input line 185.
+Package pdftex.def Info: Hastings_arm_pointcloud.png used on input line 178.
 (pdftex.def)             Requested size: 216.45425pt x 156.49014pt.
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ú in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ù in font cmr10!
 
-Overfull \hbox (9.18166pt too wide) in paragraph at lines 197--198
+Overfull \hbox (9.18166pt too wide) in paragraph at lines 187--188
 []\OT1/cmr/m/n/10 NIH/NIBIB: In-field FAST pro-ce-dure sup-port and au-toma-tio
 n (R43EB016621) 
  []
 
-[8]
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ú in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ù in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ú in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ù in font cmr10!
- [9 <./Hastings_arm.jpg> <./Hastings_arm_pointcloud.png>]
+[8 <./Hastings_arm.jpg> <./Hastings_arm_pointcloud.png>] [9]
 (AugmentedUltrasound.aux) ) 
 Here is how much of TeX's memory you used:
- 24101 strings out of 493323
- 623684 string characters out of 3139061
- 900178 words of memory out of 3000000
- 27231 multiletter control sequences out of 15000+200000
+ 24100 strings out of 493634
+ 623873 string characters out of 3143739
+ 901898 words of memory out of 3000000
+ 27075 multiletter control sequences out of 15000+200000
  7289 words of font info for 26 fonts, out of 3000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 69i,13n,103p,1574b,1885s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 1025 hyphenation exceptions out of 8191
+ 69i,12n,103p,1558b,1885s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
 onts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
 cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on AugmentedUltrasound.pdf (9 pages, 4020186 bytes).
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb>
+Output written on AugmentedUltrasound.pdf (9 pages, 5629241 bytes).
 PDF statistics:
- 98 PDF objects out of 1000 (max. 8388607)
+ 91 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 63 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 68 words of extra memory for PDF output out of 10000 (max. 10000000)
 
