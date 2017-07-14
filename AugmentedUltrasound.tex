@@ -109,7 +109,7 @@ To simplify and speed the tracking algorithm, instead of estimating the specific
 \end{tabular}
 
 \caption{
-(a) The setup of the system, with the projector at the top left and the camera and the bottom left. (b) The collected point cloud is shown in white. The intersection of the estimated red, green and blue planes with that point cloud are shown in color. This indicates that the faces of the cube are well represented by the estimated planes. (c) A close-up of the scene shows the projected colored planes and a projected yellow instruction card (labled "test image") that automatically follows the tip of the ultrasound probe.
+(a) The setup of the system, with the projector at the top left and the camera and the bottom left. (b) The collected point cloud is shown in white. The intersection of the estimated red, green and blue planes with that point cloud are shown in color. This indicates that the faces of the cube are well represented by the estimated planes. (c) A close-up of the scene shows the projected colored planes and a projected yellow instruction card (labeled "test image") that automatically follows the tip of the ultrasound probe.
 }
 \end{figure}
 
@@ -161,9 +161,12 @@ Once the complete system has captured a point cloud, located the ultrasound prob
 
 To achieve this effect, we use a stored, high resolution point cloud known as the "canvas" that is captured during initialization and updated only when the rapidly acquired reconstructions begin to deviate from the canvas. The canvas point cloud has up to 700 lines, whereas rapid point clouds used for tracking have only 45 lines. 
 
-Graphics primitives such as spheres or images as well as ray trackings and volume renderings are drawn onto the canvas, and the canvas is then transformed by the "Camera Matrix" of the projector and projected. This causes each point on a surface in the scene to be illuminated with the color light of its corresponding nearest point in the canvas pointcloud. 
+Graphics primitives such as spheres or images as well as ray tracings and volume renderings are drawn onto the canvas, by updating the color associated with each point. Next, the canvas is transformed by the "Camera Matrix" of the projector, which takes points from world coordinates to pixel coordinates on the projected image. Finally, the points of the canvas point cloud are splatted onto a bitmap and projected. This causes each point on a surface in the scene to be illuminated with the color light of its corresponding approximate nearest point in the canvas pointcloud. 
 
 The four frames per second reconstruction rate may seem slow, but our system does not need to rely on a high frame rate to avoid nausea or support smooth navigation. Only the annotations, not the full scene, are being driven by the system. Additionally, the ultrasound probe is typically a slow moving object and the environment is generally relatively static.
+
+\section{Limitations}
+The projector we are working with, the MP-CL1, only projects over a 
 
 \section{Conclusion}
 Ongoing work focuses on quantifying the performance of this algorithm.  Experiments presented in this paper indicate 2mm consistency within a 30cm x 60cm x 60cm operating environment, updated at four frames per second.  In other experiments, not presented in this paper, the system has been shown to be insensitive to a wide range of ambient light brightness and to the image being projected into the scene.
