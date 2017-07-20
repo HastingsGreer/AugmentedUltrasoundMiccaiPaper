@@ -27,14 +27,14 @@ By using a laser projector and high speed camera, we can add three capabilities 
 
 
 \section{Motivation}
-We have developed algorithms that analyze ultrasound signals to detect internal bleeding [3] and increased intracranial pressure (increased optic nerve sheath diameter) [4]. These algorithms are part of a computer-augmented, point-of-care ultrasound (CAPCUS) system that is intended to aid in the triage of patients with abdominal or head trauma at the scene of an accident, helping emergency medical service (EMS) personnel save lives by assisting them in deciding when to order expedited transport and initiate life-saving measures in the field.
+We have developed algorithms that analyze ultrasound signals to detect internal bleeding \cite{aylward2016ultrasound} and increased intracranial pressure (increased optic nerve sheath diameter) \cite{gerber2017automatic}. These algorithms are part of a computer-augmented, point-of-care ultrasound (CAPCUS) system that is intended to aid in the triage of patients with abdominal or head trauma at the scene of an accident, helping emergency medical service (EMS) personnel decide when to order expedited transport and initiate life-saving measures in the field.
 
 One of the critical, remaining challenges with deploying our CAPCUS system is informing the EMS personnel on where to place and how to manipulate an ultrasound probe at various anatomic locations in order to, for example, thoroughly examine the regions of the abdomen where blood tends to pool. This positioning task requires extensive anatomic and ultrasound training, beyond what most clinicians and/or EMS personnel typically receive.
 
 This paper presents an innovative device that combines patient and probe tracking with augmented reality to create an "augmented ultrasound" system.  It is one of a variety of methods and user interfaces that we are investigating to guide EMS personnel in probe placement, to inform them of data quality and to convey diagnoses.
 
 \section{Augmented Ultrasound}
-Rather than displaying data and instructions on a screen, our augmented ultrasound system proposes to concisely convey guidance and diagnoses by projecting instructions onto the surface of the patient. There are several advantages. Unlike a screen, a projection does not require the operator to look away from the patient. In addition, when combined with a tracker, the projection can provide directions in absolute terms. For example, our system will be able to direct the operator to "Place the scanner on the bullseye," instead of relying on more abstract instructions such as "Place the scanner on the right side of the patient's chest, half-way between the nipple and the shoulder." Furthermore, instructions can be updated based on the tracked movement of the ultrasound probe and the images/anatomy captured in the ultrasound data, ensuring coverage of an anatomic area or flashing a warning icon when the probe is not making sufficient contact with the skin.
+Rather than displaying data and instructions on a screen, our augmented ultrasound system proposes to concisely convey guidance and diagnoses by projecting instructions onto the surface of the patient. There are several advantages. Unlike a screen, a projection does not require the operator to look away from the patient. In addition, when combined with a tracker, the projection can provide directions in absolute terms. For example, a CAPCUS system that uses our algorithm for on body display would be able to direct the operator to "Place the scanner on the bullseye," instead of relying on more abstract instructions such as "Place the scanner on the right side of the patient's chest, half-way between the nipple and the shoulder." Furthermore, instructions can be updated based on the tracked movement of the ultrasound probe and the images/anatomy captured in the ultrasound data, ensuring coverage of an anatomic area or flashing a warning icon when the probe is not making sufficient contact with the skin.
 
 The augmented ultrasound system must be able to track the ultrasound probe and the surface of the patient's body and then use the generated model of the body and the position of the probe to accurately project graphics/instructions onto the patient's body.  Furthermore, the augmented ultrasound system must work in sunlight and in rugged environments with minimal set-up time so that it can be applied at the scene of an accident.  
 
@@ -43,13 +43,13 @@ In the next section, we discuss our system for forming a three-dimensional (3D) 
 
 
 \section{3D Scene Modeling}
-To form a 3D model of a scene, we replicated and extended the system described in a paper by researchers at Carnegie Mellon University that performed depth from structured light reconstruction using a portable projector, which uses laser projection technology, and a high-speed camera. (See Fig. 1, adapted from [1].) The laser projector draws only one line of a projected image at a time, but it does so fast enough that the human eye only sees the complete image.
-The high-speed camera is capable of precise timing and fast shutter speed. These properties allow the camera to take a picture as the projector draws a specific line of the image. Through a one-time calibration of the camera and the projector, and by using structured-light reconstruction algorithms, each point on a projected line that is seen by the camera can be efficiently and accurately triangulated to a point in 3D space (i.e., each illuminated point seen in a camera image is at the intersection of the plane/line of light emitted by the projector and the corresponding pixel/line viewed by the camera). The camera/projector calibration process is adapted from the method developed at Brown University [2], which is based on OpenCV and uses the camera application programming interface (API).
+To form a 3D model of a scene, we replicated and extended the system described in a paper by researchers at Carnegie Mellon University that performed depth from structured light reconstruction using a portable projector, which uses laser projection technology, and a high-speed camera. (See Fig. 1, adapted from \cite{mertz2012low}.) The laser projector draws only one line of a projected image at a time, but it does so fast enough that the human eye only sees the complete image.
+The high-speed camera is capable of precise timing and fast shutter speed. These properties allow the camera to take a picture as the projector draws a specific line of the image. Through a one-time calibration of the camera and the projector, and by using structured-light reconstruction algorithms, each point on a projected line that is seen by the camera can be efficiently and accurately triangulated to a point in 3D space (i.e., each illuminated point seen in a camera image is at the intersection of the plane/line of light emitted by the projector and the corresponding pixel/line viewed by the camera). The camera/projector calibration process is adapted from the method developed at Brown University \cite{moreno2012simple}, which is based on OpenCV and uses the camera application programming interface (API).
 \begin{figure}
 \centering
 \includegraphics[width=10cm,height=10cm,keepaspectratio]{plan}
 \caption{
-The augmented reality system uses a pico projector (based on laser projection technology) to display an image in a scene. A high-speed camera sees the individual lines being drawn by the projector to create the image. Via appropriate camera calibration, custom circuitry to detect the vertical reset of the laser and depth from structured lighting algorithms, a 3D model of the scene can be formed at very high resolution in about one second. Figure adapted from [1].
+The augmented reality system uses a pico projector (based on laser projection technology) to display an image in a scene. A high-speed camera sees the individual lines being drawn by the projector to create the image. Via appropriate camera calibration, custom circuitry to detect the vertical reset of the laser and depth from structured lighting algorithms, a 3D model of the scene can be formed at very high resolution in about one second. Figure adapted from \cite{mertz2012low}.
 }
 \end{figure}
 
@@ -115,7 +115,7 @@ To simplify and speed the tracking algorithm, instead of estimating the specific
 
 Our camera is capable of up to 300 frames per second, and our projector runs at 60 sweeps per second. However, running the camera at full frame rate does not result in an even coverage of the scene by the captured images. In addition, some frames are not useful because they would be captured as the laser is returning to the top of the screen. Finally, it is only possible to trigger the camera at evenly spaced intervals, a variable delay after our optical detection circuit fires. In our system, the camera fires three times every time the optical detection circuit is activated by the laser, leading to a speed of 180 lines per second, which is equivalent to 4 reconstructions per second.
 
-Our system can trade frame rate for resolution of the point cloud, so we tested the precision of tracking for a variety of point cloud resolutions. We found that precision did not improve past 45 lines per frame, achieving a standard deviation of 1.2 mm per axis.
+Our system can trade frame rate for resolution of the point cloud, so we tested the precision of tracking for a variety of point cloud resolutions. The results of this test are shown in figure 5. We found that precision did not improve past 45 lines per frame, achieving a standard deviation of 1.2 mm per axis. We also investigated the shape of this error, finding it to be roughly isotropic, as shown if figure 6. 
 \begin{figure}
 \begin{tikzpicture}
 \begin{axis}[
@@ -165,8 +165,6 @@ Graphics primitives such as spheres or images as well as ray tracings and volume
 
 The four frames per second reconstruction rate may seem slow, but our system does not need to rely on a high frame rate to avoid nausea or support smooth navigation. Only the annotations, not the full scene, are being driven by the system. Additionally, the ultrasound probe is typically a slow moving object and the environment is generally relatively static.
 
-\section{Limitations}
-The projector we are working with, the MP-CL1, only projects over a 
 
 \section{Conclusion}
 Ongoing work focuses on quantifying the performance of this algorithm.  Experiments presented in this paper indicate 2mm consistency within a 30cm x 60cm x 60cm operating environment, updated at four frames per second.  In other experiments, not presented in this paper, the system has been shown to be insensitive to a wide range of ambient light brightness and to the image being projected into the scene.
@@ -195,21 +193,10 @@ This work was funded, in part, by the following grants.
 %
 % ---- Bibliography ----
 %
-\begin{thebibliography}{}
-%
-\bibitem[1]{1}
-C.Mertz, S. J. Koppal, S. Sia, S.G. Narasimhan. A low powered structured light sensor for outdoor scene reconstruction and dominant material identification. In CVPRW IEEE, 2012.
 
-\bibitem[2]{2}
-D. Moreno, G. Taubin. Simple, Accurate, and Robust Projector-Camera Calibration.
+\bibliographystyle{plain}
+\bibliography{references}
 
-\bibitem[3]{3}
-S. R. Aylward, M. McCormick, H. J. Kang, S. Razzaque, R. Kwitt, M. Niethammer. Ultrasound Spectroscopy
-
-\bibitem[4]{4}
-S. Gerber, M. Jallais, H. Greer, M. McCormick, S. Montgomery, B. Freeman, D. Kane, D. Chittajallu, N. Siekierski, S. Aylward. Automatic Estimation of the Optic Nerve Sheath Diameter from Ultrasound Images.
-
-\end{thebibliography}
 
 
 \end{document}

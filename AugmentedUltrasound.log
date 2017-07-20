@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.6.9)  19 JUN 2017 13:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.6.16)  20 JUL 2017 10:30
 entering extended mode
 **./AugmentedUltrasound.tex
 (AugmentedUltrasound.tex
@@ -740,6 +740,10 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+
+LaTeX Warning: Citation `moreno2012simple' on page 2 undefined on input line 47
+.
+
 <plan.jpg, id=12, 550.055pt x 198.7425pt>
 File: plan.jpg Graphic file (type jpg)
  <use plan.jpg>
@@ -766,13 +770,13 @@ Package pdftex.def Info: CircuitSignalProcessing.png used on input line 73.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[2] <dino.png, id=18, 965.85844pt x 560.0925pt>
+[2] <dino.png, id=19, 965.85844pt x 560.0925pt>
 File: dino.png Graphic file (type png)
  <use dino.png>
 Package pdftex.def Info: dino.png used on input line 88.
 (pdftex.def)             Requested size: 166.81708pt x 96.73918pt.
 
-<rockem.png, id=19, 726.46407pt x 413.29407pt>
+<rockem.png, id=20, 726.46407pt x 413.29407pt>
 File: rockem.png Graphic file (type png)
  <use rockem.png>
 Package pdftex.def Info: rockem.png used on input line 89.
@@ -782,21 +786,21 @@ Package pdftex.def Info: rockem.png used on input line 89.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [3 <./plan.jpg>] [4 <./circuit.png> <./CircuitSignalProcessing.png> <./dino.png
-> <./rockem.png>] <Final-Setup.jpg, id=26, 1614.03pt x 1193.45876pt>
+> <./rockem.png>] <Final-Setup.jpg, id=27, 1614.03pt x 1193.45876pt>
 File: Final-Setup.jpg Graphic file (type jpg)
 
 <use Final-Setup.jpg>
 Package pdftex.def Info: Final-Setup.jpg used on input line 105.
 (pdftex.def)             Requested size: 113.81102pt x 84.1516pt.
 
-<Final-Reconstruction.png, id=27, 1020.06094pt x 520.19344pt>
+<Final-Reconstruction.png, id=28, 1020.06094pt x 520.19344pt>
 File: Final-Reconstruction.png Graphic file (type png)
 
 <use Final-Reconstruction.png>
 Package pdftex.def Info: Final-Reconstruction.png used on input line 106.
 (pdftex.def)             Requested size: 113.81102pt x 58.03902pt.
 
-<Final-CameraView.jpg, id=28, 1371.1225pt x 801.99625pt>
+<Final-CameraView.jpg, id=29, 1371.1225pt x 801.99625pt>
 File: Final-CameraView.jpg Graphic file (type jpg)
 
 <use Final-CameraView.jpg>
@@ -808,54 +812,59 @@ Overfull \hbox (2.70949pt too wide) in paragraph at lines 103--110
  []
 
 PGFPlots: reading {variance.dat}
-<45_lines_error.pdf, id=29, 462.52798pt x 346.89601pt>
+<45_lines_error.pdf, id=30, 462.52798pt x 346.89601pt>
 File: 45_lines_error.pdf Graphic file (type pdf)
 
 <use 45_lines_error.pdf>
 Package pdftex.def Info: 45_lines_error.pdf used on input line 130.
 (pdftex.def)             Requested size: 323.76736pt x 242.82555pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [5 <./Final-Setup.jpg> <./Final-Reconstruction.png> <./Final-CameraView.jpg>] 
-[6 <./45_lines_error.pdf>] [7] <Hastings_arm.jpg, id=60, 3035.34pt x 4047.12pt>
-File: Hastings_arm.jpg Graphic file (type jpg)
+[6 <./45_lines_error.pdf>]
+Underfull \vbox (badness 3849) has occurred while \output is active []
 
-<use Hastings_arm.jpg>
-Package pdftex.def Info: Hastings_arm.jpg used on input line 177.
+ [7]
+<Hastings_arm.jpg, id=61, 3035.34pt x 4047.12pt>
+File: Hastings_arm.jpg Graphic file (type jpg)
+ <use Hastings_arm.jpg>
+Package pdftex.def Info: Hastings_arm.jpg used on input line 178.
 (pdftex.def)             Requested size: 117.36346pt x 156.49014pt.
 
-<Hastings_arm_pointcloud.png, id=61, 633.11531pt x 457.71pt>
+<Hastings_arm_pointcloud.png, id=62, 633.11531pt x 457.71pt>
 File: Hastings_arm_pointcloud.png Graphic file (type png)
 
 <use Hastings_arm_pointcloud.png>
-Package pdftex.def Info: Hastings_arm_pointcloud.png used on input line 178.
+Package pdftex.def Info: Hastings_arm_pointcloud.png used on input line 179.
 (pdftex.def)             Requested size: 216.45425pt x 156.49014pt.
 
-Overfull \hbox (9.18166pt too wide) in paragraph at lines 187--188
+Overfull \hbox (9.18166pt too wide) in paragraph at lines 188--189
 []\OT1/cmr/m/n/10 NIH/NIBIB: In-field FAST pro-ce-dure sup-port and au-toma-tio
 n (R43EB016621) 
  []
 
-[8 <./Hastings_arm.jpg> <./Hastings_arm_pointcloud.png>] [9]
-(AugmentedUltrasound.aux) ) 
+(AugmentedUltrasound.bbl [8 <./Hastings_arm.jpg> <./Hastings_arm_pointcloud.png
+>]) [9] (AugmentedUltrasound.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 24108 strings out of 493323
- 623956 string characters out of 3139061
+ 24113 strings out of 493323
+ 624089 string characters out of 3139066
  903178 words of memory out of 3000000
- 27236 multiletter control sequences out of 15000+200000
- 7289 words of font info for 26 fonts, out of 3000000 for 9000
+ 27237 multiletter control sequences out of 15000+200000
+ 7634 words of font info for 27 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,12n,103p,1558b,1885s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on AugmentedUltrasound.pdf (9 pages, 5628737 bytes).
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmti9.pfb>
+Output written on AugmentedUltrasound.pdf (9 pages, 5648667 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
+ 95 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  68 words of extra memory for PDF output out of 10000 (max. 10000000)
 
